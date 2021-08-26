@@ -75,7 +75,7 @@ const Header = () => {
         </ul>
 
         <button
-          className="fixed z-50 flex items-center justify-center w-40 h-40 rounded-full bg-primary-200 bbg-white bbg-opacity-50 -top-20 -right-20 sm:hidden"
+          className="fixed z-50 flex items-center justify-center w-40 h-40 rounded-full bg-primary-200 bbg-white -top-20 -right-20 sm:hidden"
           onClick={hendleMenuButtonClick}
         >
           <span className="absolute z-50 bottom-6 left-6">

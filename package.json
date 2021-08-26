@@ -1,0 +1,60 @@
+{
+  "name": "planthome",
+  "private": true,
+  "description": "An e-commerce landing page for a fictitious plant selling company. Built with gatsbyjs and coupled with Sanity for content management",
+  "version": "0.1.0",
+  "author": "Yinka Adedire <yinkakun@gmail.com>",
+  "dependencies": {
+    "@svgr/webpack": "^5.5.0",
+    "@types/react-helmet": "^6.1.2",
+    "autoprefixer": "^10.3.1",
+    "gatsby": "^3.2.1",
+    "gatsby-plugin-graphql-codegen": "^3.0.0",
+    "gatsby-plugin-image": "^1.2.1",
+    "gatsby-plugin-manifest": "^3.2.0",
+    "gatsby-plugin-react-helmet": "^4.2.0",
+    "gatsby-plugin-sass": "^4.12.0",
+    "gatsby-plugin-sharp": "^3.2.1",
+    "gatsby-plugin-svgr": "^3.0.0-beta.0",
+    "gatsby-plugin-webfonts": "^2.1.0",
+    "gatsby-source-filesystem": "^3.2.0",
+    "gatsby-source-sanity": "^7.0.7",
+    "gatsby-transformer-sharp": "^3.2.0",
+    "hamburger-react": "^2.4.1",
+    "postcss": "^8.3.6",
+    "prop-types": "^15.7.2",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-helmet": "^6.1.0",
+    "react-portable-text": "^0.3.0",
+    "react-reveal": "^1.2.2",
+    "sass": "^1.38.0",
+    "tailwindcss": "^2.2.7"
+  },
+  "devDependencies": {
+    "@types/react": "^17.0.17",
+    "@types/react-dom": "^17.0.9",
+    "prettier": "2.2.1",
+    "react-kawaii": "^0.17.0"
+  },
+  "keywords": [
+    "gatsby"
+  ],
+  "license": "0BSD",
+  "scripts": {
+    "build": "gatsby build",
+    "dev": "gatsby develop",
+    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
+    "start": "npm run develop",
+    "serve": "gatsby serve",
+    "clean": "gatsby clean",
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
+  },
+  "bugs": {
+    "url": "https://github.com/gatsbyjs/gatsby/issues"
+  }
+}

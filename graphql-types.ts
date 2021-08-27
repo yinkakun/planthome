@@ -1405,7 +1405,6 @@ export type SitePluginPluginOptions = {
   failOnError?: Maybe<Scalars['Boolean']>;
   fileName?: Maybe<Scalars['String']>;
   documentPaths?: Maybe<Array<Maybe<Scalars['String']>>>;
-  postCssPlugins?: Maybe<Array<Maybe<SitePluginPluginOptionsPostCssPlugins>>>;
   projectId?: Maybe<Scalars['String']>;
   dataset?: Maybe<Scalars['String']>;
   fonts?: Maybe<SitePluginPluginOptionsFonts>;
@@ -1427,6 +1426,16 @@ export type SitePluginPluginOptions = {
   allExtensions?: Maybe<Scalars['Boolean']>;
   isTSX?: Maybe<Scalars['Boolean']>;
   jsxPragma?: Maybe<Scalars['String']>;
+  postCssPlugins?: Maybe<Array<Maybe<SitePluginPluginOptionsPostCssPlugins>>>;
+};
+
+export type SitePluginPluginOptionsFonts = {
+  google?: Maybe<Array<Maybe<SitePluginPluginOptionsFontsGoogle>>>;
+};
+
+export type SitePluginPluginOptionsFontsGoogle = {
+  family?: Maybe<Scalars['String']>;
+  variants?: Maybe<Array<Maybe<Scalars['String']>>>;
 };
 
 export type SitePluginPluginOptionsPostCssPlugins = {
@@ -1512,15 +1521,6 @@ export type SitePluginPluginOptionsPostCssPluginsThemeInset = {
 
 export type SitePluginPluginOptionsPostCssPluginsThemeFontFamily = {
   sans?: Maybe<Array<Maybe<Scalars['String']>>>;
-};
-
-export type SitePluginPluginOptionsFonts = {
-  google?: Maybe<Array<Maybe<SitePluginPluginOptionsFontsGoogle>>>;
-};
-
-export type SitePluginPluginOptionsFontsGoogle = {
-  family?: Maybe<Scalars['String']>;
-  variants?: Maybe<Array<Maybe<Scalars['String']>>>;
 };
 
 export type SitePluginPackageJson = {
@@ -3180,7 +3180,6 @@ export type SitePluginPluginOptionsFilterInput = {
   failOnError?: Maybe<BooleanQueryOperatorInput>;
   fileName?: Maybe<StringQueryOperatorInput>;
   documentPaths?: Maybe<StringQueryOperatorInput>;
-  postCssPlugins?: Maybe<SitePluginPluginOptionsPostCssPluginsFilterListInput>;
   projectId?: Maybe<StringQueryOperatorInput>;
   dataset?: Maybe<StringQueryOperatorInput>;
   fonts?: Maybe<SitePluginPluginOptionsFontsFilterInput>;
@@ -3202,6 +3201,20 @@ export type SitePluginPluginOptionsFilterInput = {
   allExtensions?: Maybe<BooleanQueryOperatorInput>;
   isTSX?: Maybe<BooleanQueryOperatorInput>;
   jsxPragma?: Maybe<StringQueryOperatorInput>;
+  postCssPlugins?: Maybe<SitePluginPluginOptionsPostCssPluginsFilterListInput>;
+};
+
+export type SitePluginPluginOptionsFontsFilterInput = {
+  google?: Maybe<SitePluginPluginOptionsFontsGoogleFilterListInput>;
+};
+
+export type SitePluginPluginOptionsFontsGoogleFilterListInput = {
+  elemMatch?: Maybe<SitePluginPluginOptionsFontsGoogleFilterInput>;
+};
+
+export type SitePluginPluginOptionsFontsGoogleFilterInput = {
+  family?: Maybe<StringQueryOperatorInput>;
+  variants?: Maybe<StringQueryOperatorInput>;
 };
 
 export type SitePluginPluginOptionsPostCssPluginsFilterListInput = {
@@ -3291,19 +3304,6 @@ export type SitePluginPluginOptionsPostCssPluginsThemeInsetFilterInput = {
 
 export type SitePluginPluginOptionsPostCssPluginsThemeFontFamilyFilterInput = {
   sans?: Maybe<StringQueryOperatorInput>;
-};
-
-export type SitePluginPluginOptionsFontsFilterInput = {
-  google?: Maybe<SitePluginPluginOptionsFontsGoogleFilterListInput>;
-};
-
-export type SitePluginPluginOptionsFontsGoogleFilterListInput = {
-  elemMatch?: Maybe<SitePluginPluginOptionsFontsGoogleFilterInput>;
-};
-
-export type SitePluginPluginOptionsFontsGoogleFilterInput = {
-  family?: Maybe<StringQueryOperatorInput>;
-  variants?: Maybe<StringQueryOperatorInput>;
 };
 
 export type SitePluginPackageJsonFilterInput = {
@@ -3530,10 +3530,6 @@ export type SitePageFieldsEnum =
   | 'pluginCreator___pluginOptions___failOnError'
   | 'pluginCreator___pluginOptions___fileName'
   | 'pluginCreator___pluginOptions___documentPaths'
-  | 'pluginCreator___pluginOptions___postCssPlugins'
-  | 'pluginCreator___pluginOptions___postCssPlugins___mode'
-  | 'pluginCreator___pluginOptions___postCssPlugins___purge'
-  | 'pluginCreator___pluginOptions___postCssPlugins___darkMode'
   | 'pluginCreator___pluginOptions___projectId'
   | 'pluginCreator___pluginOptions___dataset'
   | 'pluginCreator___pluginOptions___fonts___google'
@@ -3555,6 +3551,10 @@ export type SitePageFieldsEnum =
   | 'pluginCreator___pluginOptions___allExtensions'
   | 'pluginCreator___pluginOptions___isTSX'
   | 'pluginCreator___pluginOptions___jsxPragma'
+  | 'pluginCreator___pluginOptions___postCssPlugins'
+  | 'pluginCreator___pluginOptions___postCssPlugins___mode'
+  | 'pluginCreator___pluginOptions___postCssPlugins___purge'
+  | 'pluginCreator___pluginOptions___postCssPlugins___darkMode'
   | 'pluginCreator___nodeAPIs'
   | 'pluginCreator___browserAPIs'
   | 'pluginCreator___ssrAPIs'
@@ -6515,10 +6515,6 @@ export type SitePluginFieldsEnum =
   | 'pluginOptions___failOnError'
   | 'pluginOptions___fileName'
   | 'pluginOptions___documentPaths'
-  | 'pluginOptions___postCssPlugins'
-  | 'pluginOptions___postCssPlugins___mode'
-  | 'pluginOptions___postCssPlugins___purge'
-  | 'pluginOptions___postCssPlugins___darkMode'
   | 'pluginOptions___projectId'
   | 'pluginOptions___dataset'
   | 'pluginOptions___fonts___google'
@@ -6542,6 +6538,10 @@ export type SitePluginFieldsEnum =
   | 'pluginOptions___allExtensions'
   | 'pluginOptions___isTSX'
   | 'pluginOptions___jsxPragma'
+  | 'pluginOptions___postCssPlugins'
+  | 'pluginOptions___postCssPlugins___mode'
+  | 'pluginOptions___postCssPlugins___purge'
+  | 'pluginOptions___postCssPlugins___darkMode'
   | 'nodeAPIs'
   | 'browserAPIs'
   | 'ssrAPIs'

@@ -25,38 +25,36 @@ const Header = () => {
     }
   }, [menuOpen]);
 
-  const getMenuStyle = () => {
+  const generateMenuStyle = () => {
     const isMobile = useIsMobile();
 
     if (menuOpen && isMobile) {
-      return { clipPath: `circle(140.2% at 98% 0)` };
+      return { clipPath: `circle(140.2% at 98% 0)`, opacity: 1 };
     }
 
     if (!menuOpen && isMobile) {
-      return { clipPath: `circle(1.1% at 99% 0)` };
+      return { clipPath: `circle(1.1% at 99% 0)`, opacity: 0 };
     }
 
     if (!isMobile) {
-      return { clipPath: `none` };
+      return { clipPath: `none`, opacity: 1 };
     }
   };
 
   return (
     <header className="pt-8 bg-primary">
       <nav className="container z-30 flex items-center justify-between max-w-screen-xl px-5 mx-auto">
-        <Fade top>
-          <Link
-            to="/"
-            className="fixed top-0 left-0 right-0 z-30 flex items-center h-20 p-5 text-2xl font-medium sm:static bg-primary-400 sm:text-3xl sm:border-0 bg-opacity-90 sm:bg-primary"
-          >
-            <GatsbyImage alt="" image={result?.logo?.asset?.gatsbyImageData} />
-            <span className="ml-2 font-medium">{result?.title}</span>
-          </Link>
-        </Fade>
+        <Link
+          to="/"
+          className="fixed top-0 left-0 right-0 z-30 flex items-center h-20 p-5 text-2xl font-medium sm:static bg-primary-400 sm:text-3xl sm:border-0 bg-opacity-90 sm:bg-primary"
+        >
+          <GatsbyImage alt="" image={result?.logo?.asset?.gatsbyImageData} />
+          <span className="ml-2 font-medium">{result?.title}</span>
+        </Link>
 
         <ul
           className="fixed top-0 bottom-0 left-0 right-0 z-20 flex flex-col items-center justify-center transition-all duration-500 ease-linear sm:pointer-events-auto sm:static sm:flex-row bg-primary-400 sm:bg-transparent"
-          style={getMenuStyle()}
+          style={generateMenuStyle()}
         >
           {result?.headerNavigation?.map((navItem: any) => {
             return (

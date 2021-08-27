@@ -7,6 +7,8 @@ const useIsMobile = () => {
 
   useEffect(() => {
     if (typeof window !== 'undefined') {
+      setIsMobile(isMobile(window.innerWidth));
+
       const handleWindowResize = () => {
         setIsMobile(isMobile(window.innerWidth));
       };

@@ -10,12 +10,17 @@ import Fade from 'react-reveal/Fade';
 const Header = () => {
   const [blockScroll, allowScroll] = useScrollBlock();
   const [menuOpen, setMenuOpen] = useState(false);
+  const [isMounted, setIsMounted] = useState(false);
   const data = useStaticQuery<HeaderQuery>(query);
   const result = data.sanitySiteSettings;
 
   const hendleMenuButtonClick = () => {
     setMenuOpen(!menuOpen);
   };
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
 
   useEffect(() => {
     if (menuOpen) {
@@ -27,6 +32,10 @@ const Header = () => {
 
   const generateMenuStyle = () => {
     const isMobile = useIsMobile();
+
+    if (!isMounted) {
+      return { clipPath: `circle(1.1% at 99% 0)`, opacity: 0 };
+    }
 
     if (menuOpen && isMobile) {
       return { clipPath: `circle(140.2% at 98% 0)`, opacity: 1 };

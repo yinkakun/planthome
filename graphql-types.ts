@@ -1403,6 +1403,8 @@ export type SitePluginPluginOptions = {
   stripMetadata?: Maybe<Scalars['Boolean']>;
   defaultQuality?: Maybe<Scalars['Int']>;
   failOnError?: Maybe<Scalars['Boolean']>;
+  fileName?: Maybe<Scalars['String']>;
+  documentPaths?: Maybe<Array<Maybe<Scalars['String']>>>;
   postCssPlugins?: Maybe<Array<Maybe<SitePluginPluginOptionsPostCssPlugins>>>;
   projectId?: Maybe<Scalars['String']>;
   dataset?: Maybe<Scalars['String']>;
@@ -1495,6 +1497,8 @@ export type SitePluginPluginOptionsPostCssPluginsThemeExtendColorsDull_Orange = 
 
 export type SitePluginPluginOptionsPostCssPluginsThemeInset = {
   _0?: Maybe<Scalars['String']>;
+  _6?: Maybe<Scalars['String']>;
+  _20?: Maybe<Scalars['String']>;
   _2_4?: Maybe<Scalars['String']>;
   _2_3?: Maybe<Scalars['String']>;
   _1_4?: Maybe<Scalars['String']>;
@@ -3174,6 +3178,8 @@ export type SitePluginPluginOptionsFilterInput = {
   stripMetadata?: Maybe<BooleanQueryOperatorInput>;
   defaultQuality?: Maybe<IntQueryOperatorInput>;
   failOnError?: Maybe<BooleanQueryOperatorInput>;
+  fileName?: Maybe<StringQueryOperatorInput>;
+  documentPaths?: Maybe<StringQueryOperatorInput>;
   postCssPlugins?: Maybe<SitePluginPluginOptionsPostCssPluginsFilterListInput>;
   projectId?: Maybe<StringQueryOperatorInput>;
   dataset?: Maybe<StringQueryOperatorInput>;
@@ -3270,6 +3276,8 @@ export type SitePluginPluginOptionsPostCssPluginsThemeExtendColorsDull_OrangeFil
 
 export type SitePluginPluginOptionsPostCssPluginsThemeInsetFilterInput = {
   _0?: Maybe<StringQueryOperatorInput>;
+  _6?: Maybe<StringQueryOperatorInput>;
+  _20?: Maybe<StringQueryOperatorInput>;
   _2_4?: Maybe<StringQueryOperatorInput>;
   _2_3?: Maybe<StringQueryOperatorInput>;
   _1_4?: Maybe<StringQueryOperatorInput>;
@@ -3520,6 +3528,8 @@ export type SitePageFieldsEnum =
   | 'pluginCreator___pluginOptions___stripMetadata'
   | 'pluginCreator___pluginOptions___defaultQuality'
   | 'pluginCreator___pluginOptions___failOnError'
+  | 'pluginCreator___pluginOptions___fileName'
+  | 'pluginCreator___pluginOptions___documentPaths'
   | 'pluginCreator___pluginOptions___postCssPlugins'
   | 'pluginCreator___pluginOptions___postCssPlugins___mode'
   | 'pluginCreator___pluginOptions___postCssPlugins___purge'
@@ -6503,6 +6513,8 @@ export type SitePluginFieldsEnum =
   | 'pluginOptions___stripMetadata'
   | 'pluginOptions___defaultQuality'
   | 'pluginOptions___failOnError'
+  | 'pluginOptions___fileName'
+  | 'pluginOptions___documentPaths'
   | 'pluginOptions___postCssPlugins'
   | 'pluginOptions___postCssPlugins___mode'
   | 'pluginOptions___postCssPlugins___purge'

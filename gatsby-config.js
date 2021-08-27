@@ -13,7 +13,16 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     'gatsby-plugin-svgr',
-    `gatsby-plugin-graphql-codegen`,
+    {
+      resolve: `gatsby-plugin-graphql-codegen`,
+      options: {
+        fileName: `./graphql-types.ts`,
+        documentPaths: [
+          './src/**/!(*.d).{ts,tsx}',
+          './node_modules/gatsby-*/**/*.js',
+        ],
+      },
+    },
     {
       resolve: `gatsby-plugin-sass`,
       options: {
